@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --color-navy: #1a237e;
+  --color-safety: #ff5722;
+  --color-navy-light: #ebeef5;
+  --color-safety-light: #fff5f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  background: linear-gradient(135deg, #0f173d 0%, #1a237e 100%);
+  color: #1a237e;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-dark {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* KPI Card Styles */
+.kpi-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(26, 35, 126, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(26, 35, 126, 0.2);
+}
+
+/* Status Badge Styles */
+.badge-red {
+  background-color: #ff1744;
+  color: white;
+}
+
+.badge-amber {
+  background-color: #ffc400;
+  color: #1a237e;
+}
+
+.badge-green {
+  background-color: #00c853;
+  color: white;
+}
+
+/* Form Styles */
+input, textarea, select {
+  font-family: var(--font-inter);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-safety);
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+
+/* Button Reset */
+button {
+  font-family: var(--font-inter);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .glass, .glass-dark {
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}
